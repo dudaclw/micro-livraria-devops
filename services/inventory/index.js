@@ -1,6 +1,6 @@
 const grpc = require('@grpc/grpc-js');
 const protoLoader = require('@grpc/proto-loader');
-const products = require('./products.json');
+const products = require('../../micro-livraria-src/services/inventory/products.json');
 
 const packageDefinition = protoLoader.loadSync('proto/inventory.proto', {
     keepCase: true,

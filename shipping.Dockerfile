@@ -11,4 +11,4 @@ COPY . /app
 RUN npm install
 
 # Comando para inicializar (executar) a aplicação
-CMD ["node", "/app/services/shipping/index.js"]
+CMD ["node", "/app/micro-livraria-src/services/shipping/index.js"]

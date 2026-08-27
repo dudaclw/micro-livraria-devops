@@ -1,6 +1,6 @@
 const express = require('express');
-const shipping = require('./shipping');
-const inventory = require('./inventory');
+const shipping = require('../../micro-livraria-src/services/controller/shipping');
+const inventory = require('../../micro-livraria-src/services/controller/inventory');
 const cors = require('cors');
 
 const app = express();

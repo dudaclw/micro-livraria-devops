@@ -3,7 +3,7 @@
 Para gerar uma nova imagem, basta rodar o seguinte comando na raiz do projeto:
 
 ```bash
-docker build -t micro-livraria -f cypress/Dockerfile .
+docker build -t micro-livraria -f micro-livraria-src/cypress/Dockerfile .
 ```
 
 Para executar a aplicação completa via Docker
