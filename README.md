@@ -1,6 +1,8 @@
-# Atividades Práticas — Resultados
+# Atividade: Microsserviços
 
-Resumo do que foi feito nas duas tarefas do roteiro de microsserviços.
+Este repositório é minha resolução das duas tarefas práticas do projeto [micro-livraria](https://github.com/aserg-ufmg/micro-livraria) 
+
+O código original do projeto está na pasta [`micro-livraria-src`](micro-livraria-src). Na raiz coloquei só os arquivos que editei.
 
 ## Tarefa 1: Buscar produto por ID
 
@@ -31,7 +33,7 @@ curl http://localhost:3000/product/1
 }
 ```
 
-Funcionou. ✅
+
 
 ## Tarefa 2: Container Docker do Shipping
 
@@ -64,7 +66,6 @@ curl http://localhost:3000/shipping/30130000
 { "cep": "30130000", "value": 10.51 }
 ```
 
-Funcionou. ✅
 
 ## Resumo
 
@@ -74,3 +75,10 @@ Funcionou. ✅
 | Container Docker do Shipping  | ✅     |
 
 Tudo testado localmente e funcionando.
+
+## Aprendizados da Atividade
+
+-   Cada parte do sistema (front-end, controller, shipping, inventory) roda de forma separada, e conversa por rede em vez de por chamada de função direta.
+-   Antes de criar uma função nova, preciso declarar sua "assinatura" (entrada e saída) no arquivo `.proto`, como se fosse um contrato entre os serviços.
+-   O front-end só fala REST (HTTP simples) e quem traduz isso para gRPC e fala com o inventory/shipping é o controller.
+-   Dockerfile empacota um serviço (código + dependências) numa imagem, que roda igual em qualquer máquina. Rodar em container é diferente de rodar com `npm run start` direto, mas o resultado final é o mesmo serviço, na mesma porta.
